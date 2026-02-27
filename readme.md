@@ -6,20 +6,20 @@ GitHub Actions 实现 [GLaDOS][glados] 自动签到
 (折腾了两天终于摸索明白了, 23333)
 1. Fork 这个仓库
 2. 添加 Cookie 到 Secret `GLADOS`,办法如下:
-  1. 登录 [GLaDOS][glados] 获取 Cookie(注意从glados.cloud登录
-  2.   ->登录后进入打卡签到界面
-  3.   ->浏览器按F12调出,找到Application
-  4.   ->找到Cookies,点进去找到koa:sess和koa:sess.sig,分别复制下来备用.(示例: AAAAAA和BBBBB)
-  5.   ->组合上面找到的值,得到cookies组:koa:sess=AAAAAA; koa:sess.sig=BBBBBB
-  6.   特别注意:用英文标点的;且后面有个空格
-  7.   把cookies组合复制到使用的地方.(比如我是青龙面板,我就在变量里面创建一个GLAODS,里面的值填写这个koa:sess=AAAAAA; koa:sess.sig=BBBBBB  注意不需要句号,如果有多个值就直接回车换行再添加.
+  a. 登录 [GLaDOS][glados] 获取 Cookie(注意从glados.cloud登录
+  b.   ->登录后进入打卡签到界面
+  c.   ->浏览器按F12调出,找到Application
+  d.   ->找到Cookies,点进去找到koa:sess和koa:sess.sig,分别复制下来备用.(示例: AAAAAA和BBBBB)
+  e.   ->组合上面找到的值,得到cookies组:koa:sess=AAAAAA; koa:sess.sig=BBBBBB
+  f.   特别注意:用英文标点的;且后面有个空格
+  g.   把cookies组合复制到使用的地方.(比如我是青龙面板,我就在变量里面创建一个GLAODS,里面的值填写这个koa:sess=AAAAAA; koa:sess.sig=BBBBBB  注意不需要句号,如果有多个值就直接回车换行再添加.
 
 3. 启用 Actions, 每天北京时间 00:10 自动签到(这个时间自己改).
 
 额外说明: 
-1.cookies有时候是会变化的,发现打卡失败就去登录一下获取新的cookie组合. 建议一天多次打卡避免漏打.
-2.尽量到打卡界面获取cookie,特别是如果账号过期了不点过去是得不到值的.
-3.青龙面板里的变量名称是GLADOS,不是其它值,全大写. 另外GLADOS_2啊 _3啊什么的没有用,老老实实多个值就回车换行添加.实测除非cookies过期,还是能全打卡签到的.
+A.cookies是会变化的,发现打卡失败就去登录一下获取新的cookie组合. 建议一天多次打卡避免漏打.
+B.尽量到打卡界面获取cookie,特别是如果账号过期了不点过去是得不到值的.
+C.青龙面板里的变量名称是GLADOS,不是其它值,全大写. 另外GLADOS_2啊 _3啊什么的没有用,老老实实多个值就回车换行添加.实测除非cookies过期,还是能全打卡签到的.
 
 以下纯属复制粘贴:
 ## 高级功能
