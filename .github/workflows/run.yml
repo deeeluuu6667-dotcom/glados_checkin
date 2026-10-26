@@ -5,7 +5,7 @@ on:
   push:
   schedule:
     - cron: 11 03 * * *
-    - cron: 20 15 * * *
+    - cron: 22 03 * * *
 
 jobs:
   run:
